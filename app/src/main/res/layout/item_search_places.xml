@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:elevation="2dp"
+            app:cardElevation="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--View One-->
+                <ImageView
+                    android:id="@+id/img_tour_image"
+                    android:layout_width="@dimen/size_160"
+                    android:layout_height="@dimen/size_160"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_tour_name" />
+
+                <ImageButton
+                    android:id="@+id/btn_scroll_up"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_circular"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                android:id="@+id/txt_bonanza_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/margin_7"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/open_sans_medium"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_scroll_up"
+                    app:layout_constraintEnd_toEndOf="@id/btn_scroll_up"
+                    app:layout_constraintStart_toStartOf="@id/btn_scroll_up"
+                    app:layout_constraintTop_toTopOf="@id/btn_scroll_up" />
+
+                <TextView
+                    android:id="@+id/lbl_tour_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/media_title"
+                    android:layout_margin="@dimen/margin_5"
+                    android:textColor="@color/white"
+                    android:text="TOURCODE"
+                    android:gravity="end"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textSize="@dimen/margin_10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/img_tour_image" />
+
+                <TextView
+                    android:id="@+id/txt_tour_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/media_title"
+                    android:layout_margin="@dimen/margin_5"
+                    android:textColor="@color/white"
+                    android:text=""
+                    android:gravity="end"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textSize="@dimen/margin_15"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_tour_code"
+                    app:layout_constraintEnd_toEndOf="@+id/img_tour_image" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_hotel"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:src="@drawable/ic_hotel" />
+
+                    <ImageView
+                        android:id="@+id/img_food"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:layout_toRightOf="@+id/img_hotel"
+                        android:src="@drawable/ic_food" />
+
+                    <ImageView
+                        android:id="@+id/img_side_seen"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:layout_toRightOf="@+id/img_food"
+                        android:src="@drawable/ic_telescope" />
+
+                    <ImageView
+                        android:id="@+id/img_transport"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_toRightOf="@+id/img_side_seen"
+                        android:layout_margin="@dimen/margin_5"
+                        android:src="@drawable/ic_bus"/>
+
+                    <ImageView
+                        android:id="@+id/img_flight"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:layout_toRightOf="@+id/img_transport"
+                        android:src="@drawable/ic_flight" />
+                </RelativeLayout>
+
+                <!--View Two-->
+                <TextView
+                    android:id="@+id/txt_tour_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/media_title"
+                    android:layout_margin="@dimen/margin_5"
+                    android:textColor="@color/text_color"
+                    android:text=""
+                    android:gravity="start"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textSize="@dimen/margin_15"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_tour_image"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constrain_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_tour_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_tour_image"
+                    app:layout_constraintEnd_toStartOf="@+id/constrain_amount">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="45dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_night_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_extra_bold"
+                                android:textColor="@color/text_color_light"
+                                android:textSize="@dimen/textsize_14" />
+
+                            <TextView
+                                android:id="@+id/lbl_night"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_night_count"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:text="Night"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/margin_8" />
+
+                            <View
+                                android:layout_width="wrap_content"
+                                android:layout_height="0.5dp"
+                                android:background="@color/text_color_light"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:layout_alignParentBottom="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="45dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_country_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_extra_bold"
+                                android:textColor="@color/text_color_light"
+                                android:textSize="@dimen/textsize_14" />
+
+                            <TextView
+                                android:id="@+id/lbl_country"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_country_count"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:text="Country"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/margin_8" />
+
+                            <View
+                                android:layout_width="wrap_content"
+                                android:layout_height="0.5dp"
+                                android:background="@color/text_color_light"
+                                android:layout_marginLeft="@dimen/margin_4"
+                                android:layout_marginRight="@dimen/margin_4"
+                                android:layout_alignParentBottom="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="45dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_cities_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_extra_bold"
+                                android:textColor="@color/text_color_light"
+                                android:textSize="@dimen/textsize_14" />
+
+                            <TextView
+                                android:id="@+id/lbl_cities"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_cities_count"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:text="Cities"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/margin_8" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constrain_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/margin_5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_tour_name"
+                    app:layout_constraintStart_toEndOf="@+id/constrain_count"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center">
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/text_color_light"
+                                android:layout_marginTop="@dimen/margin_2" />
+
+                            <LinearLayout
+                                android:id="@+id/lner_joining"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="1"
+                                android:layout_marginStart="@dimen/margin_5"
+                                android:padding="@dimen/margin_2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.25"
+                                    android:fontFamily="@font/open_sans_medium"
+                                    android:text="Joining"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/textsize_10" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="&lt;"
+                                    android:textColor="@color/text_color"
+                                    android:fontFamily="@font/open_sans_extra_bold"
+                                    android:textSize="@dimen/textsize_10" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.65"
+                                    android:id="@+id/txt_joining_place"
+                                    android:textColor="@color/green"
+                                    android:text=""
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:textSize="@dimen/textsize_10" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="1"
+                                android:layout_below="@+id/lner_joining"
+                                android:layout_marginStart="@dimen/margin_5"
+                                android:padding="@dimen/margin_2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.25"
+                                    android:fontFamily="@font/open_sans_medium"
+                                    android:text="Leaving"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/textsize_10" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.05"
+                                    android:text="&gt;"
+                                    android:textColor="@color/text_color"
+                                    android:fontFamily="@font/open_sans_extra_bold"
+                                    android:textSize="@dimen/textsize_10" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.65"
+                                    android:id="@+id/txt_leaving_place"
+                                    android:textColor="@color/colorAccent"
+                                    android:text=""
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:textSize="@dimen/textsize_10" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="wrap_content"
+                                android:layout_height="0.5dp"
+                                android:background="@color/text_color_light"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:layout_alignParentBottom="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:layout_gravity="center">
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/text_color_light"
+                                android:layout_marginEnd="@dimen/margin_5" />
+
+                            <TextView
+                                android:id="@+id/lbl_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_marginTop="@dimen/margin_5"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:text="All inclusive price | Per Person"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/margin_8" />
+
+                            <TextView
+                                android:id="@+id/txt_previous_cost"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/textsize_10"
+                                android:layout_below="@+id/lbl_price" />
+
+                            <TextView
+                                android:id="@+id/txt_Discounted_cost"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/textsize_10"
+                                android:layout_below="@id/txt_previous_cost" />
+
+                            <TextView
+                                android:id="@+id/txt_booking_click"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/textsize_25"
+                                android:layout_below="@+id/txt_Discounted_cost"
+                                android:layout_marginStart="@dimen/margin_5"
+                                android:layout_marginTop="@dimen/margin_5"
+                                android:layout_marginEnd="@dimen/margin_5"
+                                android:layout_marginBottom="@dimen/margin_5"
+                                android:background="@drawable/bg_rectangle_button"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/textsize_10" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

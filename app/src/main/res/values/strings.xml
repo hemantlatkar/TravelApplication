@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Kesari Task</string>
+    <string name="search_place">Search Place</string>
+    <string name="place_name_hint">Place name</string>
+    <string name="place_not_found">Place Not found</string>
+    <string name="bonanza_offer">Bonanza \nOffer \n\u20B9</string>
+    <string name="you_save">YOU SAVE \u20B9</string>
+    <string name="loading">Loading</string>
+    <string name="language">Language: %s</string>
+    <string name="unknown">\?</string>
+
+    <string name="default_search_message">Use the searchbar to find places !</string>
+    <string name="empty_search_message">No media found. Try Again !</string>
+    <string name="na">N/A</string>
+
+    <string name="action_search">Search</string>
+    <string name="search_hint">Type name…</string>
+</resources>
+
+    <!--
+    Task 1
+
+
+
+    Bind the response from the following API
+
+    (POST API)
+
+    https://login.kesari.in/route/inventory/getTourPackageDataWeb
+
+    Parameter -
+
+    {"tourSeries": "0", "zone": "Andaman","tourID": "0"}
+
+
+
+    Find the attached Image for reference (same or similar to the attached demo image )
+
+    Task 2
+    1. List all the student's info like Name, Course, Subjects Mark, Total and Average
+    2. Give an add option on the App bar to add new student details.
+    3. When clicking on the add button, navigate to the next screen where the user can enter the student name, option to select the course such as CSE, ECE, Mech, Civil.
+    4. When a particular course is selected, display 3 subjects from that selected course (Subjects are given below) with the option to enter the mark for each subject.
+    5. When clicking on the save button, calculate the average and total of the entered marks and save the details on the database along with the course name.
+    6. Refresh the list screen (first screen) to show the updated data.
+
+    Database : Sqlite /Room/ Realm
+
+    CSE>      C language,java,data structure
+        ECE>      Digital electronics,maths,Microprocessor
+        Mech>     Nanotechnology,Biometrics,Acoustics
+        Civil>       Material science, Construction Engineering, Hydraulic science
+
+
+        Kindly share the task file as soon as you complete the task.
+        -->
