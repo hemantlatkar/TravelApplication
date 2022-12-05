@@ -192,8 +192,8 @@ class UpdateRecordFragment : Fragment() {
         builder.setPositiveButton("Yes"){_,_-> args.studentData.id.let {
                 viewModel.deleteStudentRecord(it!!)
             }
-            Toast.makeText(requireActivity(),"Deleted record",Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+            Toast.makeText(requireActivity(),"Record deleted",Toast.LENGTH_SHORT).show()
+            findNavController().popBackStack()
         }
         builder.setNegativeButton("No"){_,_-> }
         builder.setTitle("Delete ${args.studentData.studentName} data?")

@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.example.travelapplication.R
 import com.example.travelapplication.databinding.FragmentListBinding
 import com.example.travelapplication.ui.fragments.list.RecordAdapter
@@ -18,6 +19,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
 
 class RecordListFragment : Fragment() {
 
@@ -32,6 +34,10 @@ class RecordListFragment : Fragment() {
         _binding = FragmentListBinding.inflate(layoutInflater)
         binding.recyclerView.adapter = referralFormAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        binding.swiperefresh.setOnRefreshListener(OnRefreshListener {
+            binding.swiperefresh.isRefreshing =  true
+            observeViewModelData()
+        })
         setHasOptionsMenu(true)
         observeViewModelData()
         return binding.root
@@ -49,14 +55,15 @@ class RecordListFragment : Fragment() {
                             model.subjectName_3,model.subjectMarks_3,model.totalMarks,model.averageMarks)
                         )
                     }
+                    binding.swiperefresh.isRefreshing =  false
+                    referralFormAdapter.submitList(recordList)
                     if(recordList.size > 0){
                         binding.lblNoRecord.visibility =  View.GONE
-                        referralFormAdapter.submitList(recordList)
                     }else{
                         binding.lblNoRecord.visibility =  View.VISIBLE
                     }
                 }catch(e : Exception){
-
+                    binding.swiperefresh.isRefreshing =  false
                 }
             })
         }

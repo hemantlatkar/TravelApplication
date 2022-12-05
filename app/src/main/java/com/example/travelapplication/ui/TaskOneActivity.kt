@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.travelapplication.*
 import com.example.travelapplication.data.TourModel.ResponseObjectItem
 import com.example.travelapplication.databinding.ActivityTaskOneBinding
@@ -44,7 +45,11 @@ class TaskOneActivity : AppCompatActivity() {
         _binding = DataBindingUtil.setContentView(this, R.layout.activity_task_one)
         mViewModel = ViewModelProviders.of(this, viewModelFactory).get(PlacesViewModel::class.java)
 
-        callSearchPlaceAPI(DEFAULT_SEARCH_TOUR_SERIES, DEFAULT_SEARCH_ZONE, DEFAULT_SEARCH_TOUR_ID)
+        callSearchPlaceAPI(DEFAULT_SEARCH_TOUR_SERIES, DEFAULT_SEARCH_ZONE, DEFAULT_SEARCH_TOUR_ID,true)
+        binding.swiperefresh.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener {
+            binding.swiperefresh.isRefreshing = true
+            callSearchPlaceAPI(DEFAULT_SEARCH_TOUR_SERIES, DEFAULT_SEARCH_ZONE, DEFAULT_SEARCH_TOUR_ID,true)
+        })
         binding.placeRecyclerView.apply {
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -95,8 +100,8 @@ class TaskOneActivity : AppCompatActivity() {
         } else super.onOptionsItemSelected(item)
     }
 
-    private fun callSearchPlaceAPI(tourSeries: String, zone: String, tourID: String) {
-        binding.progressbar.visibility =  View.VISIBLE
+    private fun callSearchPlaceAPI(tourSeries: String, zone: String, tourID: String, isSwipeRefresh : Boolean) {
+        if(!isSwipeRefresh) binding.progressbar.visibility =  View.VISIBLE
         mViewModel.getPlacesList(tourSeries, zone,tourID).observe(this, Observer {
             if (it.size > 0) {
                 binding.progressbar.visibility =  View.GONE
